@@ -5,12 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="通过 DXF 轮廓或示例生成三维零件，调整尺寸并导出 STL。" />
     <meta name="theme-color" content="#2463eb" />
-    <link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <title>三维工坊 · 工程三视图建模</title>
+    <script type="module" crossorigin src="./assets/index-DkAf24nX.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BKyXez9R.css">
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"><div style="max-width:560px;margin:12vh auto;padding:28px;font:16px/1.8 sans-serif;color:#244263;background:#f2f6ff;border-radius:12px"><h1 style="font-size:24px">三维工坊</h1><p id="boot-message">正在加载建模工作台…</p><p id="boot-help" hidden>如果你上传的是源码包，请在 GitHub 仓库 Settings → Pages 中选择 GitHub Actions；或者上传已构建的“直接部署包”。</p></div></div>
+    <script>
+      function showBootError() {
+        var message = document.getElementById('boot-message');
+        if (!message) return;
+        message.textContent = '操作界面未能加载，请检查部署文件或网络连接。';
+        document.getElementById('boot-help').hidden = false;
+      }
+      window.addEventListener('error', showBootError, true);
+      setTimeout(showBootError, 12000);
+    </script>
     <noscript>请启用 JavaScript，以使用 CAD 解析与三维建模。</noscript>
-    <script type="module" src="/app/main.tsx"></script>
   </body>
 </html>
